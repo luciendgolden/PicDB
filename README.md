@@ -26,4 +26,4 @@ Implementation of a picture application in javafx
 
 ## GUI
 
-![Mockup](src/main/resources/img/mockup.jpg)
+![Mockup](src/main/resources/at/technikum/swei/img/mockup.jpg)
