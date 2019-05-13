@@ -17,7 +17,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<?import at.technikum.swei.button.mediator.EXIFButton?>
+<?import at.technikum.swei.button.mediator.IPTCButton?>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="at.technikum.swei.Controller" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox prefHeight="57.0" prefWidth="688.0">
          <children>
@@ -91,8 +93,8 @@
                      <children>
                         <HBox>
                            <children>
-                                <ToggleButton prefHeight="27.0" prefWidth="130.0" text="IPTC" />
-                                <ToggleButton prefHeight="27.0" prefWidth="117.0" selected="true" text="EXIF" />
+                                <IPTCButton prefHeight="27.0" prefWidth="130.0" fx:id="iptcToggleButton"/>
+                                <EXIFButton prefHeight="27.0" prefWidth="117.0" fx:id="exifToggleButton"/>
                            </children>
                            <padding>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
