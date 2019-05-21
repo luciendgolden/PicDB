@@ -1,7 +1,5 @@
 package at.technikum.swei.button.mediator;
 
-import java.util.List;
-import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
 
 public class ConcreteMediator implements Mediator<ToggleButton> {
