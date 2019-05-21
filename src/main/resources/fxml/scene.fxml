@@ -19,143 +19,198 @@
 
 <?import at.technikum.swei.button.mediator.EXIFButton?>
 <?import at.technikum.swei.button.mediator.IPTCButton?>
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-  prefHeight="400.0" prefWidth="600.0" fx:controller="at.technikum.swei.controller.Controller"
-  xmlns:fx="http://javafx.com/fxml">
+
+<?import javafx.scene.layout.GridPane?>
+
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<VBox alignment="CENTER" fx:controller="at.technikum.swei.controller.Controller"
+  xmlns:fx="http://javafx.com/fxml"
+  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+  prefHeight="400.0" prefWidth="600.0">
   <children>
-    <HBox prefHeight="57.0" prefWidth="688.0">
+    <VBox>
       <children>
-        <MenuBar nodeOrientation="LEFT_TO_RIGHT">
-          <menus>
-            <Menu mnemonicParsing="false" text="File">
-              <items>
-                <MenuItem mnemonicParsing="false" text="New"/>
-                <MenuItem mnemonicParsing="false" text="Open…"/>
-                <Menu mnemonicParsing="false" text="Open Recent"/>
-                <SeparatorMenuItem mnemonicParsing="false"/>
-                <MenuItem mnemonicParsing="false" text="Close"/>
-                <MenuItem mnemonicParsing="false" text="Save"/>
-                <MenuItem mnemonicParsing="false" text="Save As…"/>
-                <MenuItem mnemonicParsing="false" text="Revert"/>
-                <SeparatorMenuItem mnemonicParsing="false"/>
-                <MenuItem mnemonicParsing="false" text="Preferences…"/>
-                <SeparatorMenuItem mnemonicParsing="false"/>
-                <MenuItem mnemonicParsing="false" text="Quit"/>
-              </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Edit">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Undo"/>
-                <MenuItem mnemonicParsing="false" text="Redo"/>
-                <SeparatorMenuItem mnemonicParsing="false"/>
-                <MenuItem mnemonicParsing="false" text="Cut"/>
-                <MenuItem mnemonicParsing="false" text="Copy"/>
-                <MenuItem mnemonicParsing="false" text="Paste"/>
-                <MenuItem mnemonicParsing="false" text="Delete"/>
-                <SeparatorMenuItem mnemonicParsing="false"/>
-                <MenuItem mnemonicParsing="false" text="Select All"/>
-                <MenuItem mnemonicParsing="false" text="Unselect All"/>
-              </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Options">
-              <items>
-                <MenuItem mnemonicParsing="false" text="About"/>
-              </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Help">
-              <items>
-                <MenuItem mnemonicParsing="false" text="FAQ"/>
-              </items>
-            </Menu>
-          </menus>
-        </MenuBar>
-        <TextField alignment="TOP_RIGHT">
-          <effect>
-            <Reflection/>
-          </effect>
-          <HBox.margin>
+        <HBox prefHeight="57.0" prefWidth="688.0">
+          <children>
+            <MenuBar nodeOrientation="LEFT_TO_RIGHT">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="New"/>
+                    <MenuItem mnemonicParsing="false" text="Open…"/>
+                    <Menu mnemonicParsing="false" text="Open Recent"/>
+                    <SeparatorMenuItem mnemonicParsing="false"/>
+                    <MenuItem mnemonicParsing="false" text="Close"/>
+                    <MenuItem mnemonicParsing="false" text="Save"/>
+                    <MenuItem mnemonicParsing="false" text="Save As…"/>
+                    <MenuItem mnemonicParsing="false" text="Revert"/>
+                    <SeparatorMenuItem mnemonicParsing="false"/>
+                    <MenuItem mnemonicParsing="false" text="Preferences…"/>
+                    <SeparatorMenuItem mnemonicParsing="false"/>
+                    <MenuItem mnemonicParsing="false" text="Quit"/>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Undo"/>
+                    <MenuItem mnemonicParsing="false" text="Redo"/>
+                    <SeparatorMenuItem mnemonicParsing="false"/>
+                    <MenuItem mnemonicParsing="false" text="Cut"/>
+                    <MenuItem mnemonicParsing="false" text="Copy"/>
+                    <MenuItem mnemonicParsing="false" text="Paste"/>
+                    <MenuItem mnemonicParsing="false" text="Delete"/>
+                    <SeparatorMenuItem mnemonicParsing="false"/>
+                    <MenuItem mnemonicParsing="false" text="Select All"/>
+                    <MenuItem mnemonicParsing="false" text="Unselect All"/>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Options">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About"/>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="FAQ"/>
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <TextField alignment="TOP_RIGHT">
+              <HBox.margin>
+                <Insets/>
+              </HBox.margin>
+            </TextField>
+          </children>
+          <VBox.margin>
             <Insets/>
-          </HBox.margin>
-        </TextField>
-      </children>
-      <VBox.margin>
-        <Insets/>
-      </VBox.margin>
-    </HBox>
-    <SplitPane dividerPositions="0.5735785953177257" focusTraversable="true" prefHeight="376.0"
-      prefWidth="900.0">
-      <items>
-        <AnchorPane prefHeight="316.0" prefWidth="258.0">
-          <children>
-            <ImageView fitHeight="316.0" fitWidth="339.0" pickOnBounds="true" preserveRatio="true"/>
-          </children>
-        </AnchorPane>
-        <AnchorPane prefHeight="294.0" prefWidth="184.0">
-          <children>
-            <VBox prefHeight="330.0" prefWidth="251.0">
+          </VBox.margin>
+        </HBox>
+        <SplitPane dividerPositions="0.5735785953177257" focusTraversable="true" prefHeight="376.0"
+          prefWidth="900.0">
+          <items>
+            <AnchorPane prefHeight="316.0" prefWidth="258.0">
               <children>
-                <HBox>
-                  <children>
-                    <IPTCButton prefHeight="27.0" prefWidth="130.0" fx:id="iptcToggleButton"/>
-                    <EXIFButton prefHeight="27.0" prefWidth="117.0" fx:id="exifToggleButton"/>
-                  </children>
-                  <padding>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                  </padding>
-                </HBox>
-                <HBox>
-                  <children>
-                    <TextField/>
-                    <Button mnemonicParsing="false" text="Button"/>
-                  </children>
-                  <padding>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                  </padding>
-                </HBox>
-                <HBox>
-                  <children>
-                    <TextField prefHeight="27.0" prefWidth="163.0"/>
-                  </children>
-                  <padding>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                  </padding>
-                </HBox>
-                <HBox>
-                  <children>
-                    <TextArea prefHeight="200.0" prefWidth="200.0"/>
-                  </children>
-                  <padding>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                  </padding>
-                </HBox>
-                <HBox alignment="CENTER_RIGHT">
-                  <children>
-                    <Button mnemonicParsing="false" text="Button"/>
-                  </children>
-                  <padding>
-                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
-                  </padding>
-                </HBox>
+                <ImageView fitHeight="316.0" fitWidth="339.0" pickOnBounds="true"
+                  preserveRatio="true"/>
               </children>
-            </VBox>
-          </children>
-        </AnchorPane>
-      </items>
-    </SplitPane>
-    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0">
-      <padding>
-        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
-      </padding>
-      <children>
-        <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
-          <children>
-            <ScrollPane centerShape="false" fitToWidth="true" focusTraversable="false"
-              hbarPolicy="ALWAYS" hmax="0.0" minWidth="-Infinity" pannable="true" prefHeight="36.0"
-              prefViewportHeight="1.0" prefWidth="600.0" scaleShape="false" vbarPolicy="NEVER"
-              vmax="0.0"/>
-          </children>
-        </AnchorPane>
+            </AnchorPane>
+            <AnchorPane prefHeight="294.0" prefWidth="184.0">
+              <children>
+                <VBox prefHeight="330.0" prefWidth="251.0">
+                  <children>
+                    <HBox>
+                      <children>
+                        <IPTCButton prefHeight="27.0" prefWidth="130.0" fx:id="iptcToggleButton"/>
+                        <EXIFButton prefHeight="27.0" prefWidth="117.0" fx:id="exifToggleButton"/>
+                      </children>
+                      <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                      </padding>
+                    </HBox>
+                    <HBox>
+                      <children>
+                        <TextField/>
+                        <Button mnemonicParsing="false" text="Button"/>
+                      </children>
+                      <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                      </padding>
+                    </HBox>
+                    <HBox>
+                      <children>
+                        <TextField prefHeight="27.0" prefWidth="163.0"/>
+                      </children>
+                      <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                      </padding>
+                    </HBox>
+                    <HBox>
+                      <children>
+                        <TextArea prefHeight="200.0" prefWidth="200.0"/>
+                      </children>
+                      <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                      </padding>
+                    </HBox>
+                    <HBox alignment="CENTER_RIGHT">
+                      <children>
+                        <Button mnemonicParsing="false" text="Button"/>
+                      </children>
+                      <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                      </padding>
+                    </HBox>
+                  </children>
+                </VBox>
+              </children>
+            </AnchorPane>
+          </items>
+        </SplitPane>
       </children>
-    </HBox>
+      <children>
+        <!--<fx:include source="listview.fxml"></fx:include>-->
+        <ListView fx:id="listView" orientation="HORIZONTAL">
+          <ImageView fx:id="boximage"
+            disable="false"
+            fitHeight="150.0" fitWidth="200.0"
+            layoutX="69.0" layoutY="322.0"
+            pickOnBounds="true"
+            preserveRatio="true">
+            <image>
+              <Image
+                url="http://collider.com/wp-content/uploads/lego-batman-movie-dc-super-heroes-unite-1.jpg"/>
+            </image>
+          </ImageView>
+          <ImageView fx:id="boximage3"
+            disable="false"
+            fitHeight="150.0" fitWidth="200.0"
+            layoutX="69.0" layoutY="322.0"
+            pickOnBounds="true"
+            preserveRatio="true">
+            <image>
+              <Image
+                url="http://collider.com/wp-content/uploads/lego-batman-movie-dc-super-heroes-unite-1.jpg"/>
+            </image>
+          </ImageView>
+          <ImageView fx:id="boximage2"
+            disable="false"
+            fitHeight="150.0" fitWidth="200.0"
+            layoutX="69.0" layoutY="322.0"
+            pickOnBounds="true"
+            preserveRatio="true">
+            <image>
+              <Image
+                url="http://collider.com/wp-content/uploads/lego-batman-movie-dc-super-heroes-unite-1.jpg"/>
+            </image>
+          </ImageView>
+          <ImageView fx:id="boximage4"
+            disable="false"
+            fitHeight="150.0" fitWidth="200.0"
+            layoutX="69.0" layoutY="322.0"
+            pickOnBounds="true"
+            preserveRatio="true">
+            <image>
+              <Image
+                url="http://collider.com/wp-content/uploads/lego-batman-movie-dc-super-heroes-unite-1.jpg"/>
+            </image>
+          </ImageView>
+          <ImageView fx:id="boximage5"
+            disable="false"
+            fitHeight="150.0" fitWidth="200.0"
+            layoutX="69.0" layoutY="322.0"
+            pickOnBounds="true"
+            preserveRatio="true">
+            <image>
+              <Image
+                url="http://collider.com/wp-content/uploads/lego-batman-movie-dc-super-heroes-unite-1.jpg"/>
+            </image>
+          </ImageView>
+
+        </ListView>
+      </children>
+    </VBox>
   </children>
 </VBox>

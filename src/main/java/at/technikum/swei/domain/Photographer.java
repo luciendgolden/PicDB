@@ -2,21 +2,28 @@ package at.technikum.swei.domain;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "photographer")
 public class Photographer implements Serializable {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "id", unique = true)
-  private int id;
+  private Long id;
 
   @Column(name = "first_name", columnDefinition="varchar(100)")
   private String firstName;
@@ -33,44 +40,37 @@ public class Photographer implements Serializable {
   @Column(name = "notes", columnDefinition="varchar(255)")
   private String notes;
 
-  public int getId() {
-    return id;
-  }
+  @OneToMany(mappedBy = "photographer")
+  private List<Picture> pictureList = new ArrayList<>();
 
-  public String getFirstName() {
-    return firstName;
-  }
-
-  public void setFirstName(String firstName) {
-    this.firstName = firstName;
-  }
-
-  public String getLastName() {
-    return lastName;
-  }
-
-  public void setLastName(String lastName) {
-    this.lastName = lastName;
-  }
-
-  public LocalDate getBirthDate() {
-    return birthDate;
-  }
-
-  public void setBirthDate(LocalDate birthDate) {
-    this.birthDate = birthDate;
-  }
-
-  public String getNotes() {
-    return notes;
-  }
-
-  public void setNotes(String notes) {
-    this.notes = notes;
+  public void addPicture(Picture picture) {
+    this.pictureList.add(picture);
+    picture.setPhotographer(this);
   }
 
   @Override
   public String toString() {
+    StringBuilder stringBuilder = new StringBuilder();
+    stringBuilder.append("Photographer{");
+    stringBuilder.append("id=" + id);
+    stringBuilder.append(", firstName='" + firstName + '\'');
+    stringBuilder.append(", lastName='" + lastName + '\'');
+    stringBuilder.append(", birthDate=" + birthDate);
+    stringBuilder.append(", notes='" + notes + '\'');
+
+    String names = "";
+
+    for(Picture p:pictureList){
+      names+=p.getName()+",";
+    }
+
+    stringBuilder.append(", pictureList[" + names + "]");
+    stringBuilder.append("}");
+
+    return stringBuilder.toString();
+  }
+
+  public String printPhotographer() {
     return "Photographer{" +
         "id=" + id +
         ", firstName='" + firstName + '\'' +
