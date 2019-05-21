@@ -20,7 +20,7 @@
 <?import at.technikum.swei.button.mediator.EXIFButton?>
 <?import at.technikum.swei.button.mediator.IPTCButton?>
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-  prefHeight="400.0" prefWidth="600.0" fx:controller="at.technikum.swei.Controller"
+  prefHeight="400.0" prefWidth="600.0" fx:controller="at.technikum.swei.controller.Controller"
   xmlns:fx="http://javafx.com/fxml">
   <children>
     <HBox prefHeight="57.0" prefWidth="688.0">

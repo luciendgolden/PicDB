@@ -1,4 +1,4 @@
-package at.technikum.swei;
+package at.technikum.swei.controller;
 
 import at.technikum.swei.button.mediator.Component;
 import at.technikum.swei.button.mediator.ConcreteMediator;

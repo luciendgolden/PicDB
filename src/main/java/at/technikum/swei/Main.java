@@ -10,12 +10,18 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+  private static Scene scene;
+
   @Override
-  public void start(Stage primaryStage) throws Exception {
-    Parent root = loadFXML("scene");
-    primaryStage.setTitle("PICDB");
-    primaryStage.setScene(new Scene(root));
-    primaryStage.show();
+  public void start(Stage stage) throws Exception {
+    scene = new Scene(loadFXML("scene"));
+    stage.setTitle("PICDB");
+    stage.setScene(scene);
+    stage.show();
+  }
+
+  static void setRoot(String fxml) throws IOException {
+    scene.setRoot(loadFXML(fxml));
   }
 
   private static Parent loadFXML(String fxml) throws IOException {
