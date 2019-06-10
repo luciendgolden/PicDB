@@ -17,7 +17,6 @@ import lombok.ToString;
 @Entity
 @Getter
 @Setter
-@ToString
 @Table(name = "exif")
 public class EXIF implements Serializable {
   @Id

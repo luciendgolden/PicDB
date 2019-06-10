@@ -20,8 +20,6 @@
 <?import at.technikum.swei.button.mediator.EXIFButton?>
 <?import at.technikum.swei.button.mediator.IPTCButton?>
 
-<?import javafx.scene.layout.GridPane?>
-
 
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
@@ -78,7 +76,7 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <TextField alignment="TOP_RIGHT">
+            <TextField alignment="CENTER_RIGHT">
               <HBox.margin>
                 <Insets/>
               </HBox.margin>
@@ -151,7 +149,7 @@
         </SplitPane>
       </children>
       <children>
-        <!--<fx:include source="listview.fxml"></fx:include>-->
+        <!--<fx:include source="pictureListView.fxml"></fx:include>-->
         <ListView fx:id="listView" orientation="HORIZONTAL">
           <ImageView fx:id="boximage"
             disable="false"
