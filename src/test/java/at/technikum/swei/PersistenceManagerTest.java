@@ -3,8 +3,6 @@ package at.technikum.swei;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import at.technikum.swei.configuration.Configuration;
-import at.technikum.swei.dal.JpaPhotographerDAO;
 import at.technikum.swei.domain.EXIF;
 import at.technikum.swei.domain.IPTC;
 import at.technikum.swei.domain.Photographer;
@@ -15,7 +13,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

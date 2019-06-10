@@ -1,10 +1,10 @@
-package at.technikum.swei.dal;
+package at.technikum.swei.dal.dao;
 
 import at.technikum.swei.domain.Picture;
 import java.util.List;
 import javax.persistence.Query;
 
-public class JpaPictureDAO extends JpaDAO<Long, Picture> {
+public class PictureDAO extends DAODatabase<Long, Picture> {
 
   @Override
   public List<Picture> getEntities() {

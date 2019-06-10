@@ -1,7 +1,5 @@
-package at.technikum.swei.dal;
+package at.technikum.swei.dal.dao;
 
-import at.technikum.swei.domain.Photographer;
-import at.technikum.swei.domain.Picture;
 import java.util.List;
 
 public interface DAO<K,E>{

@@ -1,4 +1,4 @@
-package at.technikum.swei.dal;
+package at.technikum.swei.dal.dao;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.function.Consumer;
@@ -8,14 +8,14 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-public abstract class JpaDAO<K, E> implements DAO<K, E> {
+public abstract class DAODatabase<K, E> implements DAO<K, E> {
 
   protected Class<E> entityClass;
 
   private EntityManagerFactory ENTITY_MANAGER_FACTORY;
   protected EntityManager entityManager;
 
-  public JpaDAO() {
+  public DAODatabase() {
     ParameterizedType genericSuperclass = (ParameterizedType) getClass().getGenericSuperclass();
     this.entityClass = (Class<E>) genericSuperclass.getActualTypeArguments()[1];
 

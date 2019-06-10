@@ -1,11 +1,10 @@
-package at.technikum.swei.dal;
+package at.technikum.swei.dal.dao;
 
 import at.technikum.swei.domain.Photographer;
-import java.util.Collection;
 import java.util.List;
 import javax.persistence.Query;
 
-public class JpaPhotographerDAO extends JpaDAO<Long, Photographer> {
+public class PhotographerDAO extends DAODatabase<Long, Photographer> {
 
   @Override
   public List<Photographer> getEntities() {
