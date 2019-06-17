@@ -9,12 +9,15 @@ import java.util.Optional;
 
 public class DALFactory {
 
+  private final static PhotographerDAO photographerDAO = new PhotographerDAO();
+  private final static PictureDAO pictureDAO = new PictureDAO();
+
   public static <T extends DAO> DAO getDAL(Class<T> clazz) {
     if(clazz!=null){
     if(clazz.equals(PhotographerDAO.class)){
-      return new PhotographerDAO();
+      return photographerDAO;
     }else if(clazz.equals(PictureDAO.class)) {
-      return new PictureDAO();
+      return pictureDAO;
     }
     }else{
       return new DAOMock();

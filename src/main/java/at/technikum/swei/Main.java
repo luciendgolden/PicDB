@@ -23,17 +23,23 @@ public class Main extends Application {
 
   @Override
   public void start(Stage stage) throws Exception {
-
     logger.info("Start javafx application");
-
     scene = new Scene(loadFXML("mainWindowView"));
     stage.setTitle("PICDB");
     stage.setScene(scene);
     stage.show();
   }
 
-  static void setRoot(String fxml) throws IOException {
+  public static void setRoot(String fxml) throws IOException {
     scene.setRoot(loadFXML(fxml));
+  }
+
+  public static void openPopup(String fxml) throws IOException {
+    scene = new Scene(loadFXML(fxml));
+    Stage stage = new Stage();
+    stage.setTitle(fxml);
+    stage.setScene(scene);
+    stage.show();
   }
 
   private static Parent loadFXML(String fxml) throws IOException {

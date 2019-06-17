@@ -37,17 +37,17 @@ public abstract class DAODatabase<K, E> implements DAO<K, E> {
 
   @Override
   public void save(E entity) {
-    executeInsideTransaction(entityManager -> entityManager.persist(entity));
+    executeInsideTransaction(em -> em.persist(entity));
   }
 
   @Override
   public void update(E entity) {
-    executeInsideTransaction(entityManager -> entityManager.merge(entity));
+    executeInsideTransaction(em -> em.merge(entity));
   }
 
   @Override
   public void remove(E entity) {
-    executeInsideTransaction(entityManager -> entityManager.remove(entity));
+    executeInsideTransaction(em -> em.remove(em.contains(entity) ? entity : em.merge(entity)));
   }
 
   private void executeInsideTransaction(Consumer<EntityManager> action) {

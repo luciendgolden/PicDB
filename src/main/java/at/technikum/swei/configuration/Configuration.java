@@ -18,7 +18,7 @@ public class Configuration {
   private Configuration() {
   }
 
-  public static Configuration getINSTANCE() {
+  public static Configuration   getINSTANCE() {
     if (INSTANCE==null)
       INSTANCE = new Configuration();
     return INSTANCE;

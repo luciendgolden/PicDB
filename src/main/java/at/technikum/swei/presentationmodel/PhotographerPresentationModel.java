@@ -59,7 +59,7 @@ public class PhotographerPresentationModel {
     return photographer.getFirstName();
   }
 
-  public String getLasname() {
+  public String getLastName() {
     return photographer.getLastName();
   }
 
@@ -71,4 +71,17 @@ public class PhotographerPresentationModel {
     return photographer.getNotes();
   }
 
+  @Override
+  public String toString() {
+    StringBuilder builder = new StringBuilder();
+
+    builder.append("ID: ");
+    builder.append(getID());
+    builder.append(". ");
+    builder.append(getFirstname());
+    builder.append(" ");
+    builder.append(getLastName());
+
+    return builder.toString();
+  }
 }
