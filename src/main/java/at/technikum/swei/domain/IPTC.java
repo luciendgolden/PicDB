@@ -28,6 +28,15 @@ public class IPTC implements Serializable {
   @JoinColumn(name = "fk_picture_id")
   private Picture picture;
 
+  @Column(name = "color_mark", columnDefinition="varchar(255)")
+  private String colorMark;
+
+  @Column(name = "review", columnDefinition="varchar(255)")
+  private String review;
+
+  @Column(name = "description", columnDefinition="varchar(255)")
+  private String description;
+
   public IPTC() {
   }
 }

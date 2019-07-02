@@ -1,28 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
+<?import at.technikum.swei.button.mediator.EXIFButton?>
+<?import at.technikum.swei.button.mediator.IPTCButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.ToggleButton?>
-<?import javafx.scene.effect.Reflection?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-
-<?import at.technikum.swei.button.mediator.EXIFButton?>
-<?import at.technikum.swei.button.mediator.IPTCButton?>
-
-
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.image.Image?>
 <VBox alignment="CENTER" fx:controller="at.technikum.swei.controller.Controller"
   xmlns:fx="http://javafx.com/fxml"
   maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
@@ -90,10 +82,9 @@
         <SplitPane dividerPositions="0.5735785953177257" focusTraversable="true" prefHeight="376.0"
           prefWidth="900.0">
           <items>
-            <AnchorPane prefHeight="316.0" prefWidth="258.0">
+            <AnchorPane prefHeight="300.0" prefWidth="250.0">
               <children>
-                <ImageView fitHeight="316.0" fitWidth="339.0" pickOnBounds="true"
-                  preserveRatio="true"/>
+                <fx:include source="showPictureImageView.fxml"></fx:include>
               </children>
             </AnchorPane>
             <AnchorPane prefHeight="294.0" prefWidth="184.0">
@@ -150,65 +141,7 @@
         </SplitPane>
       </children>
       <children>
-        <!--<fx:include source="pictureListView.fxml"></fx:include>-->
-        <ListView fx:id="listView" orientation="HORIZONTAL">
-          <ImageView fx:id="boximage"
-            disable="false"
-            fitHeight="150.0" fitWidth="200.0"
-            layoutX="69.0" layoutY="322.0"
-            pickOnBounds="true"
-            preserveRatio="true">
-            <image>
-              <Image
-                url="http://collider.com/wp-content/uploads/lego-batman-movie-dc-super-heroes-unite-1.jpg"/>
-            </image>
-          </ImageView>
-          <ImageView fx:id="boximage3"
-            disable="false"
-            fitHeight="150.0" fitWidth="200.0"
-            layoutX="69.0" layoutY="322.0"
-            pickOnBounds="true"
-            preserveRatio="true">
-            <image>
-              <Image
-                url="http://collider.com/wp-content/uploads/lego-batman-movie-dc-super-heroes-unite-1.jpg"/>
-            </image>
-          </ImageView>
-          <ImageView fx:id="boximage2"
-            disable="false"
-            fitHeight="150.0" fitWidth="200.0"
-            layoutX="69.0" layoutY="322.0"
-            pickOnBounds="true"
-            preserveRatio="true">
-            <image>
-              <Image
-                url="http://collider.com/wp-content/uploads/lego-batman-movie-dc-super-heroes-unite-1.jpg"/>
-            </image>
-          </ImageView>
-          <ImageView fx:id="boximage4"
-            disable="false"
-            fitHeight="150.0" fitWidth="200.0"
-            layoutX="69.0" layoutY="322.0"
-            pickOnBounds="true"
-            preserveRatio="true">
-            <image>
-              <Image
-                url="http://collider.com/wp-content/uploads/lego-batman-movie-dc-super-heroes-unite-1.jpg"/>
-            </image>
-          </ImageView>
-          <ImageView fx:id="boximage5"
-            disable="false"
-            fitHeight="150.0" fitWidth="200.0"
-            layoutX="69.0" layoutY="322.0"
-            pickOnBounds="true"
-            preserveRatio="true">
-            <image>
-              <Image
-                url="http://collider.com/wp-content/uploads/lego-batman-movie-dc-super-heroes-unite-1.jpg"/>
-            </image>
-          </ImageView>
-
-        </ListView>
+        <fx:include source="pictureListView.fxml"></fx:include>
       </children>
     </VBox>
   </children>

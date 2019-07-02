@@ -28,6 +28,15 @@ public class EXIF implements Serializable {
   @JoinColumn(name = "fk_picture_id")
   private Picture picture;
 
+  @Column(name = "camera_vendor", columnDefinition="varchar(255)")
+  private String cameraVendor;
+
+  @Column(name = "flash", columnDefinition="varchar(255)")
+  private String flash;
+
+  @Column(name = "resolution", columnDefinition="varchar(255)")
+  private String resolution;
+
   public EXIF() {
   }
 }

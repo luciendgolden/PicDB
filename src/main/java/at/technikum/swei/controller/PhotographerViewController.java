@@ -74,22 +74,46 @@ public class PhotographerViewController {
   }
 
   @FXML
-  private void saveDaPhotoman(ActionEvent event){
+  private void saveDaPhotoman(ActionEvent event) {
     final int selectedIdx = photographerListView.getSelectionModel().getSelectedIndex();
 
     PhotographerPresentationModel itemToSave = (PhotographerPresentationModel) photographerListView
         .getSelectionModel().getSelectedItem();
 
+    PhotographerPresentationModel fallback = copyPhotographerPresentationModel(itemToSave);
+
+    // Set before validate
     itemToSave.setFirstname(this.firstName.getText());
     itemToSave.setLasname(this.lastName.getText());
-
     itemToSave.setBirthDate(convertStringToLocalDate(this.birthDate.getText()));
     itemToSave.setNotes(this.notes.getText());
 
-    businessLayer.updatePhotographer(itemToSave.getPhotographer());
+    if (itemToSave.isValid()) {
+      businessLayer.updatePhotographer(itemToSave.getPhotographer());
+      this.items.set(selectedIdx, itemToSave);
+    } else {
+      this.firstName.setText(fallback.getFirstname());
+      this.lastName.setText(fallback.getLastName());
+      this.notes.setText(fallback.getNotes());
+      this.birthDate.setText(fallback.getBirthDate().toString());
 
+      this.items.set(selectedIdx, fallback);
 
-    this.items.set(selectedIdx, itemToSave);
+      logger.error("PhotographerPresentationModel can't be saved!");
+    }
+  }
+
+  private PhotographerPresentationModel copyPhotographerPresentationModel(
+      PhotographerPresentationModel itemToSave) {
+    PhotographerPresentationModel ppm = new PhotographerPresentationModel();
+
+    ppm.setID(itemToSave.getID());
+    ppm.setFirstname(itemToSave.getFirstname());
+    ppm.setLasname(itemToSave.getLastName());
+    ppm.setNotes(itemToSave.getNotes());
+    ppm.setBirthDate(itemToSave.getBirthDate());
+
+    return ppm;
   }
 
 

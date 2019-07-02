@@ -3,11 +3,9 @@ package at.technikum.swei.presentationmodel;
 import at.technikum.swei.domain.Photographer;
 import java.time.LocalDate;
 
-public class PhotographerPresentationModel {
+public class PhotographerPresentationModel{
 
   private Photographer photographer;
-
-
 
   public PhotographerPresentationModel(Photographer photographer) {
     this.photographer = photographer;
@@ -34,6 +32,9 @@ public class PhotographerPresentationModel {
     return this.photographer;
   }
 
+  public void setID(Long id) {
+    photographer.setId(id);
+  }
 
   public void setFirstname(String firstname) {
     photographer.setFirstName(firstname);

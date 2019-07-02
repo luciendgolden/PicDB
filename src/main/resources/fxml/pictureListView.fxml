@@ -1,46 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-
-
-<?import javafx.scene.layout.HBox?>
-
-<HBox maxHeight="-Infinity" fx:controller="at.technikum.swei.controller.PictureListController" xmlns:fx="http://javafx.com/fxml" >
-  <ListView fx:id="listView" orientation="HORIZONTAL">
-    <ImageView fx:id="boximage"
-      disable="false"
-      fitHeight="150.0" fitWidth="200.0"
-      layoutX="69.0" layoutY="322.0"
-      pickOnBounds="true"
-      preserveRatio="true">
-      <image>
-        <Image
-          url="http://collider.com/wp-content/uploads/lego-batman-movie-dc-super-heroes-unite-1.jpg"/>
-      </image>
-    </ImageView>
-    <ImageView fx:id="boximage3"
-      disable="false"
-      fitHeight="150.0" fitWidth="200.0"
-      layoutX="69.0" layoutY="322.0"
-      pickOnBounds="true"
-      preserveRatio="true">
-      <image>
-        <Image
-          url="http://collider.com/wp-content/uploads/lego-batman-movie-dc-super-heroes-unite-1.jpg"/>
-      </image>
-    </ImageView>
-    <ImageView fx:id="boximage2"
-      disable="false"
-      fitHeight="150.0" fitWidth="200.0"
-      layoutX="69.0" layoutY="322.0"
-      pickOnBounds="true"
-      preserveRatio="true">
-      <image>
-        <Image
-          url="http://collider.com/wp-content/uploads/lego-batman-movie-dc-super-heroes-unite-1.jpg"/>
-      </image>
-    </ImageView>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane fx:controller="at.technikum.swei.controller.PictureListController" xmlns:fx="http://javafx.com/fxml" >
+  <ListView fx:id="listView" orientation="HORIZONTAL" prefWidth="800.0" prefHeight="200.0">
   </ListView>
-</HBox>
+</AnchorPane>
