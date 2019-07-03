@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import at.technikum.swei.button.mediator.EXIFButton?>
+<?import at.technikum.swei.button.mediator.IPTCButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ComboBox?>
+<VBox alignment="CENTER" fx:controller="at.technikum.swei.controller.Controller"
+  xmlns:fx="http://javafx.com/fxml"
+  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+  prefHeight="600.0" prefWidth="800.0">
+  <children>
+    <VBox>
+      <children>
+        <HBox prefHeight="57.0" prefWidth="688.0">
+          <children>
+            <MenuBar nodeOrientation="LEFT_TO_RIGHT">
+              <menus>
+                <Menu mnemonicParsing="false" text="Show">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Photographers" fx:id="photographerButton" onAction="#handlePhotographer"/>
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <TextField alignment="CENTER_RIGHT">
+              <HBox.margin>
+                <Insets/>
+              </HBox.margin>
+            </TextField>
+          </children>
+          <VBox.margin>
+            <Insets/>
+          </VBox.margin>
+        </HBox>
+        <SplitPane dividerPositions="0.5735785953177257" focusTraversable="true" prefHeight="376.0"
+          prefWidth="900.0">
+          <items>
+            <AnchorPane prefHeight="300.0" prefWidth="250.0">
+              <children>
+                <fx:include source="showPictureImageView.fxml"></fx:include>
+              </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="294.0" prefWidth="184.0">
+              <children>
+                <VBox prefHeight="330.0" prefWidth="251.0">
+                  <children>
+                    <HBox>
+                      <children>
+                        <IPTCButton prefHeight="27.0" prefWidth="130.0" fx:id="iptcToggleButton" />
+                        <EXIFButton prefHeight="27.0" prefWidth="117.0" fx:id="exifToggleButton" />
+                      </children>
+                      <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                      </padding>
+                    </HBox>
+                    <HBox>
+                      <children>
+                        <ComboBox fx:id="photographerComboBox"/>
+                      </children>
+                      <children>
+                        <ComboBox fx:id="comboBox"/>
+                      </children>
+                      <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                      </padding>
+                    </HBox>
+                    <HBox>
+                      <children>
+                        <TextField prefHeight="27.0" prefWidth="163.0" fx:id="textField"/>
+                      </children>
+                      <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                      </padding>
+                    </HBox>
+                    <HBox>
+                      <children>
+                        <TextArea prefHeight="200.0" prefWidth="200.0" fx:id="textArea"/>
+                      </children>
+                      <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                      </padding>
+                    </HBox>
+                    <HBox alignment="CENTER_RIGHT">
+                      <children>
+                        <Button mnemonicParsing="false" text="Save" fx:id="saveButton" onAction="#saveInformation"/>
+                      </children>
+                      <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                      </padding>
+                    </HBox>
+                  </children>
+                </VBox>
+              </children>
+            </AnchorPane>
+          </items>
+        </SplitPane>
+      </children>
+      <children>
+        <fx:include source="pictureListView.fxml"></fx:include>
+      </children>
+    </VBox>
+  </children>
+</VBox>

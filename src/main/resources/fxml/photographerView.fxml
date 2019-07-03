@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.technikum.swei.controller.PhotographerViewController">
+   <children>
+      <HBox prefHeight="200.0" prefWidth="400.0">
+         <children>
+            <ListView prefHeight="400.0" prefWidth="345.0" fx:id="photographerListView"/>
+            <VBox prefHeight="400.0" prefWidth="258.0">
+               <children>
+                  <Label text="Vorname" />
+                  <TextField prefHeight="29.0" prefWidth="257.0" fx:id="firstName"/>
+                  <Label text="Nachname" />
+                  <TextField prefHeight="27.0" prefWidth="257.0" fx:id="lastName"/>
+                  <Label text="BirthDate" />
+                  <TextField prefHeight="23.0" prefWidth="257.0" fx:id="birthDate"/>
+                  <Label text="Notes" />
+                  <TextArea prefHeight="127.0" prefWidth="257.0" fx:id="notes"/>
+                  <Button mnemonicParsing="false" prefHeight="67.0" prefWidth="257.0" text="Save" onAction="#saveDaPhotoman"/>
+                  <Button mnemonicParsing="false" prefHeight="69.0" prefWidth="255.0" text="Delete Selected" onAction="#deletePhotographer"/>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
