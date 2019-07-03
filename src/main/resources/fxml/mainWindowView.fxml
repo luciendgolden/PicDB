@@ -15,6 +15,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ComboBox?>
 <VBox alignment="CENTER" fx:controller="at.technikum.swei.controller.Controller"
   xmlns:fx="http://javafx.com/fxml"
   maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
@@ -26,45 +27,9 @@
           <children>
             <MenuBar nodeOrientation="LEFT_TO_RIGHT">
               <menus>
-                <Menu mnemonicParsing="false" text="File">
+                <Menu mnemonicParsing="false" text="Show">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Pictures"/>
                     <MenuItem mnemonicParsing="false" text="Photographers" fx:id="photographerButton" onAction="#handlePhotographer"/>
-                    <MenuItem mnemonicParsing="false" text="Open…"/>
-                    <Menu mnemonicParsing="false" text="Open Recent"/>
-                    <SeparatorMenuItem mnemonicParsing="false"/>
-                    <MenuItem mnemonicParsing="false" text="Close"/>
-                    <MenuItem mnemonicParsing="false" text="Save"/>
-                    <MenuItem mnemonicParsing="false" text="Save As…"/>
-                    <MenuItem mnemonicParsing="false" text="Revert"/>
-                    <SeparatorMenuItem mnemonicParsing="false"/>
-                    <MenuItem mnemonicParsing="false" text="Preferences…"/>
-                    <SeparatorMenuItem mnemonicParsing="false"/>
-                    <MenuItem mnemonicParsing="false" text="Quit"/>
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Undo"/>
-                    <MenuItem mnemonicParsing="false" text="Redo"/>
-                    <SeparatorMenuItem mnemonicParsing="false"/>
-                    <MenuItem mnemonicParsing="false" text="Cut"/>
-                    <MenuItem mnemonicParsing="false" text="Copy"/>
-                    <MenuItem mnemonicParsing="false" text="Paste"/>
-                    <MenuItem mnemonicParsing="false" text="Delete"/>
-                    <SeparatorMenuItem mnemonicParsing="false"/>
-                    <MenuItem mnemonicParsing="false" text="Select All"/>
-                    <MenuItem mnemonicParsing="false" text="Unselect All"/>
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Options">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About"/>
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="FAQ"/>
                   </items>
                 </Menu>
               </menus>
@@ -93,8 +58,8 @@
                   <children>
                     <HBox>
                       <children>
-                        <IPTCButton prefHeight="27.0" prefWidth="130.0" fx:id="iptcToggleButton"/>
-                        <EXIFButton prefHeight="27.0" prefWidth="117.0" fx:id="exifToggleButton"/>
+                        <IPTCButton prefHeight="27.0" prefWidth="130.0" fx:id="iptcToggleButton" />
+                        <EXIFButton prefHeight="27.0" prefWidth="117.0" fx:id="exifToggleButton" />
                       </children>
                       <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
@@ -102,8 +67,10 @@
                     </HBox>
                     <HBox>
                       <children>
-                        <TextField/>
-                        <Button mnemonicParsing="false" text="Save Information"/>
+                        <ComboBox fx:id="photographerComboBox"/>
+                      </children>
+                      <children>
+                        <ComboBox fx:id="comboBox"/>
                       </children>
                       <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
@@ -111,7 +78,7 @@
                     </HBox>
                     <HBox>
                       <children>
-                        <TextField prefHeight="27.0" prefWidth="163.0"/>
+                        <TextField prefHeight="27.0" prefWidth="163.0" fx:id="textField"/>
                       </children>
                       <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
@@ -119,7 +86,7 @@
                     </HBox>
                     <HBox>
                       <children>
-                        <TextArea prefHeight="200.0" prefWidth="200.0"/>
+                        <TextArea prefHeight="200.0" prefWidth="200.0" fx:id="textArea"/>
                       </children>
                       <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
@@ -127,7 +94,7 @@
                     </HBox>
                     <HBox alignment="CENTER_RIGHT">
                       <children>
-                        <Button mnemonicParsing="false" text="Button"/>
+                        <Button mnemonicParsing="false" text="Save" fx:id="saveButton" onAction="#saveInformation"/>
                       </children>
                       <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>

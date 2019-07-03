@@ -79,4 +79,8 @@ public class Photographer implements Serializable {
         ", notes='" + notes + '\'' +
         '}';
   }
+
+  public String getName(){
+    return getFirstName() + " " + getLastName();
+  }
 }

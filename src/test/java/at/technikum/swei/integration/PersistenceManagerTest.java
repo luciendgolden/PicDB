@@ -1,4 +1,4 @@
-package at.technikum.swei;
+package at.technikum.swei.integration;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

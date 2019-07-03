@@ -67,6 +67,10 @@ public class BusinessLayer {
     DALFactory.getDAL(EXIFDAO.class).save(exif);
   }
 
+  public EXIF getEXIFByPicId(Picture picId) {
+    return ((EXIFDAO) DALFactory.getDAL(EXIFDAO.class)).findByPicId(picId);
+  }
+
   /**
    * IPTC
    */
@@ -88,6 +92,10 @@ public class BusinessLayer {
 
   public void saveIPTC(IPTC iptc) {
     DALFactory.getDAL(IPTCDAO.class).save(iptc);
+  }
+
+  public IPTC getIPTCByPicId(Picture picId) {
+    return ((IPTCDAO) DALFactory.getDAL(IPTCDAO.class)).findByPicId(picId);
   }
 
 

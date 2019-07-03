@@ -1,4 +1,4 @@
-package at.technikum.swei;
+package at.technikum.swei.integration;
 
 import at.technikum.swei.configuration.Configuration;
 import at.technikum.swei.dal.dao.PhotographerDAO;

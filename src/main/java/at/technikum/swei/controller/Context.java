@@ -1,5 +1,7 @@
 package at.technikum.swei.controller;
 
+import at.technikum.swei.button.mediator.EXIFButton;
+
 public class Context {
 
   private final static Context context = new Context();
